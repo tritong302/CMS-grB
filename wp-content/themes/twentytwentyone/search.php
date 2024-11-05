@@ -11,7 +11,11 @@
 
 get_header();
 ?>
-
+<div class="row search-none">
+	<?php
+		get_template_part( 'template-parts/content/content-none' );
+	?>
+</div>
 <div class="content-list-post">
 <div class="row">
 <div class="col-md-3">

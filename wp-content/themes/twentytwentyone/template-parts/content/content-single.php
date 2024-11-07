@@ -10,7 +10,8 @@
  */
 
 ?>
-<div class="row">
+
+        <div class="row">
             <div class="col-md-3 bg-corossedbg">
             <h4 class="categories-2">Categories</h4>
                 <div class="crossedbg-13">
@@ -45,8 +46,7 @@
         </div>
         <div class="col-md-6">
             
-       
-<?php     
+        <?php     
 $date = get_the_date('d');
 $month = get_the_date('m');
 $year = get_the_date('y');
@@ -80,3 +80,7 @@ $year = get_the_date('y');
 </article><!-- #post-<?php the_ID(); ?> -->
        
         </div>
+
+        </div>
+
+    </div>

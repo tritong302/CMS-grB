@@ -3972,7 +3972,7 @@ table.wp-calendar-table caption {
 }
 
 .singular .entry-header {
-	border-bottom: 3px solid var(--global--color-border);
+	/* border-bottom: 3px solid var(--global--color-border); */
 	padding-bottom: calc(2 * var(--global--spacing-vertical));
 	margin-bottom: calc(3 * var(--global--spacing-vertical));
 }
@@ -6097,6 +6097,15 @@ footer {
 .module1-header .nav-hea a {
 	color: #777777;
 }
+.overviewline{
+	margin-top: 50px;
+}
+.entry-header .alignwide{
+	margin-bottom: 10px;
+}
+.entry-content{
+	padding-top: -100px;
+}
 /* End module 1*/
 /* Module 2 */
 .content-list-post{
@@ -6208,7 +6217,7 @@ footer {
 
 .detailpost .alignwide .overviewline {
 	border-bottom: 1px solid #cecece !important;
-    margin: 25px 0 15px !important;
+
     position: relative !important;
 }
 
@@ -6253,11 +6262,10 @@ footer {
 }
 .detailpost .entry-content{
 	top: 10px;
-	font-style: italic;
+
 }
 .detailpost .entry-content p{
-	font-family: 'Open Sans Condensed', sans-serif;
-	
+	font-family: "Segoe UI Symbol";
 }
 /* end module 6 */
 /* Module 12 */
@@ -6759,3 +6767,52 @@ padding-left: 30px;
     top: 12px;
 }
 /*end module 7 */
+.comment-box {
+    margin-top: 30px !important;
+}
+
+.comment-box img {
+    width: 50px;
+    height: 50px;
+}
+
+.comment-box .media-left {
+    padding-right: 10px;
+    width: 65px;
+}
+
+.comment-box .media-body p {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.comment-box .media-body .media p {
+    margin-bottom: 0;
+}
+
+.comment-box .media-heading {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 7px 10px;
+    position: relative;
+    margin-bottom: -1px;
+}
+
+.comment-box .media-heading:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: -6px;
+}
+
+/* Thêm CSS cho các bình luận con */
+.child-comment {
+    margin-left: 50px !important; /* Thụt vào phải 50px */
+}

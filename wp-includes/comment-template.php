@@ -2635,7 +2635,7 @@ function comment_form($args = array(), $post = null)
 	 *
 	 * @param string[] $fields Array of the default comment fields.
 	 */
-	$fields = apply_filters('comment_form_default_fields', $fields);
+	$fields = apply_filters( 'comment_form_default_fields', $fields );
 
 	$defaults = array(
 		'fields'               => $fields,
@@ -2673,26 +2673,25 @@ function comment_form($args = array(), $post = null)
 						<input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID">
 						<input type="hidden" name="comment_parent" id="comment_parent" value="0">			
                		 </div>		
-				</section>') : sprintf('<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"' . $required_attribute . '></textarea>')
-		),
+				</section>') : sprintf('<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"' . $required_attribute . '></textarea>')),
 		'must_log_in'          => sprintf(
 			'<p class="must-log-in">%s</p>',
 			sprintf(
 				/* translators: %s: Login URL. */
-				__('You must be <a href="%s">logged in</a> to post a comment.'),
+				__( 'You must be <a href="%s">logged in</a> to post a comment.' ),
 				/** This filter is documented in wp-includes/link-template.php */
-				wp_login_url(apply_filters('the_permalink', get_permalink($post_id), $post_id))
+				wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
 			)
 		),
 		'logged_in_as'         => sprintf(
-			'<p class="logged-in-as">%s%s</p>',
+			'<p class="logged-in-as"></p>',
 			sprintf(
 				/* translators: 1: User name, 2: Edit user link, 3: Logout URL. */
-				__('Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>'),
+				__( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>' ),
 				$user_identity,
 				get_edit_user_link(),
 				/** This filter is documented in wp-includes/link-template.php */
-				wp_logout_url(apply_filters('the_permalink', get_permalink($post_id), $post_id))
+				wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
 			),
 			$required_text
 		),
@@ -2700,28 +2699,28 @@ function comment_form($args = array(), $post = null)
 			'<p class="comment-notes">%s%s</p>',
 			sprintf(
 				'<span id="email-notes">%s</span>',
-				__('Your email address will not be published.')
+				__( 'Your email address will not be published.' )
 			),
 			$required_text
 		),
 		'comment_notes_after'  => '',
-		'action'               => site_url('/wp-comments-post.php'),
+		'action'               => site_url( '/wp-comments-post.php' ),
 		'id_form'              => 'commentform',
 		'id_submit'            => 'submit',
 		'class_container'      => 'comment-respond',
 		'class_form'           => 'comment-form',
 		'class_submit'         => 'submit',
 		'name_submit'          => 'submit',
-		'title_reply'          => __('Leave a Reply'),
+		'title_reply'          => __( 'Leave a Reply' ),
 		/* translators: %s: Author of the comment being replied to. */
-		'title_reply_to'       => __('Leave a Reply to %s'),
+		'title_reply_to'       => __( 'Leave a Reply to %s' ),
 		'title_reply_before'   => '<h3 id="reply-title" class="comment-reply-title">',
 		'title_reply_after'    => '</h3>',
 		'cancel_reply_before'  => ' <small>',
 		'cancel_reply_after'   => '</small>',
-		'cancel_reply_link'    => __('Cancel reply'),
-		'label_submit'         => __('Post Comment'),
-		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+		'cancel_reply_link'    => __( 'Cancel reply' ),
+		'label_submit'         => __( 'Post Comment' ),
+		'submit_button'        => '',
 		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
 		'format'               => 'xhtml',
 	);

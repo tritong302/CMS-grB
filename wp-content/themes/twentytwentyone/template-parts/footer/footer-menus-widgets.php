@@ -37,7 +37,7 @@ if (is_wp_error($wp_terms)) {
 
 // Lấy các bài viết gần đây
 $wp_posts = get_posts(array(
-    'numberposts' => 5, // Số lượng bài viết muốn lấy
+    'numberposts' => 3, // Số lượng bài viết muốn lấy
     'post_status' => 'publish' // Chỉ lấy bài viết đã xuất bản
 ));
 
@@ -49,7 +49,7 @@ if (is_wp_error($wp_posts)) {
 }
 ?>
 
-<div class="row text-center text-xs-center text-sm-left text-md-left">
+<div class="row text-center text-xs-center text-sm-left text-md-left" style="margin-left: 100px;">
     <!-- Cột 1 -->
     <div class="col-xs-12 col-sm-4 col-md-4">
         <h5>Comment</h5>
@@ -58,7 +58,7 @@ if (is_wp_error($wp_posts)) {
                 <?php foreach ($comments as $comment): ?>
                     <li>
                         <a href="<?php echo esc_url(get_comment_link($comment)); ?>">
-                            <?php echo esc_html($comment->comment_content); ?>
+                            <i class="fa fa-angle-double-right"></i><?php echo esc_html($comment->comment_content); ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
@@ -76,7 +76,7 @@ if (is_wp_error($wp_posts)) {
                 <?php foreach ($terms as $term): ?>
                     <li>
                         <a href="<?php echo esc_url(get_term_link($term)); ?>">
-                            <?php echo esc_html($term->name); ?>
+                            <i class="fa fa-angle-double-right"></i><?php echo esc_html($term->name); ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
@@ -87,14 +87,14 @@ if (is_wp_error($wp_posts)) {
     </div>
 
     <!-- Cột 3 -->
-    <div class="col-xs-12 col-sm-4 col-md-4">
+    <div class="col-xs-12 col-sm-4 col-md-4" style="width: 500px;">
         <h5>Last Post</h5>
         <ul class="list-unstyled quick-links">
             <?php if (!empty($posts)): ?>
                 <?php foreach ($posts as $post): ?>
                     <li>
                         <a href="<?php echo esc_url(get_permalink($post)); ?>">
-                            <?php echo esc_html(get_the_title($post)); ?>
+                            <i class="fa fa-angle-double-right"></i><?php echo esc_html(get_the_title($post)); ?>
                         </a>
                     </li>
                 <?php endforeach; ?>

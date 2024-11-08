@@ -19,8 +19,66 @@ get_header();
 </div>
 <div class="content-list-post">
 	<div class="row">
-		<div class="col-md-3">
+	<div class="col-md-3">
+    <div id="content" class="page">
+        <h1 class="titlepage">Trang mới nhất</h1>
+        <hr class="gg">
+        <ul class="page-list">
+            <?php
+            $args = array(
+                'post_type' => 'page', // Chỉ lấy các trang
+                'posts_per_page' => 3, // Lấy 3 trang mới nhất
+                'orderby' => 'date', // Sắp xếp theo ngày
+                'order' => 'DESC' // Lấy trang mới nhất trước
+            );
+            $query = new WP_Query($args);
 
+            while ($query->have_posts()) : $query->the_post();
+            ?>
+            <li>
+                <h2 class="pages"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <hr class="ww">
+                <?php
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail();
+                }
+                ?>
+                <?php get_template_part('template-parts/excerpt/excerpt', get_post_format()); ?>
+            </li>
+            <?php endwhile;
+            wp_reset_postdata();
+            ?>
+        </ul>
+    </div>
+</div>
+		<div id="content"class="page">
+    <h1 class="titlepage" >Trang mới nhất</h1>
+	<hr class="gg">
+    <ul class="page-list">
+        <?php
+        $args = array(
+            'post_type' => 'page', // Chỉ lấy các trang
+            'posts_per_page' => -1 // Lấy tất cả trang
+        );
+        $query = new WP_Query($args);
+
+        while ($query->have_posts()) : $query->the_post();
+        ?>
+        <li>
+            <h2 class="pages"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<hr class="ww">	
+            <?php
+            if (has_post_thumbnail()) {
+                the_post_thumbnail();
+            }
+            ?>
+			<?php get_template_part( 'template-parts/excerpt/excerpt', get_post_format() ); ?>
+        </li>
+        <?php endwhile;
+        wp_reset_postdata();
+        ?>
+    </ul>
+</div>
 
 		</div>
 		<div class="col-md-6">
